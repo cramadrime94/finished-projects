@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Grow Your Business With Us</h1>
+    <p class="text-lg md:text-xl mb-6 max-w-xl">
+      We build fast, responsive websites that help your business attract more customers.
+    </p>
+    <a href="#features" class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition">Get Started</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 bg-gray-50 px-4">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">Why Choose Us?</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">🚀 Speed</h3>
+          <p>We deliver fully responsive websites within days, not weeks.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">📱 Mobile-First</h3>
+          <p>Your website will look great on phones, tablets, and desktops.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">💼 Custom Solutions</h3>
+          <p>We tailor every website to your business needs and goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- FAQ Section -->
+<section id="faq" class="py-20 px-4 bg-white">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+    <div class="space-y-4 text-left">
+      
+      <div class="border p-4 rounded-xl">
+        <button class="faq-toggle font-semibold text-lg w-full text-left flex justify-between items-center">
+          What services do you offer?
+          <span class="text-xl">+</span>
+        </button>
+        <div class="faq-content mt-2 hidden">
+          <p>We provide complete website design, development, and optimization services.</p>
+        </div>
+      </div>
+
+      <div class="border p-4 rounded-xl">
+        <button class="faq-toggle font-semibold text-lg w-full text-left flex justify-between items-center">
+          How long does it take to build a site?
+          <span class="text-xl">+</span>
+        </button>
+        <div class="faq-content mt-2 hidden">
+          <p>Most websites are completed within 5–7 business days, depending on complexity.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-100 text-center text-sm text-gray-600">
+    &copy; 2025 Your Company. All rights reserved.
+  </footer>
+<script>
+  const toggles = document.querySelectorAll('.faq-toggle');
+
+  toggles.forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('span');
+      const isOpen = !content.classList.contains('hidden');
+
+      content.classList.toggle('hidden');
+      icon.textContent = isOpen ? '+' : '–';
+    });
+  });
+</script>
+
+</body>
+</html>
