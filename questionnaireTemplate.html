@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Extended Questionnaire Template</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #004d7a;
+  margin: 0;
+}
+    .container {
+      max-width: 700px;
+      margin: 30px auto 50px;
+      background: white;
+      padding: 25px 35px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    details {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      background: #fafafa;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      outline: none;
+      padding: 5px 0;
+    }
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: 600;
+    }
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    input[type="range"] {
+      width: 100%;
+      margin-top: 6px;
+    }
+    .slider-value {
+      font-weight: 600;
+      color: #2a9df4;
+      margin-left: 12px;
+    }
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 18px;
+      font-weight: normal;
+    }
+    button.submit-btn {
+      background-color: #2a9df4;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      width: 100%;
+    }
+    button.submit-btn:hover {
+      background-color: #1a7de0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Assessment Title Goes Here</h1>
+  </header>
+
+  <main class="container">
+    <form id="assessmentForm">
+      <!-- Category 1 -->
+      <details open>
+        <summary>Category 1: General Questions</summary>
+
+        <label for="q1">1. What is your name?</label>
+        <input type="text" id="q1" name="q1" />
+
+        <label for="q2">2. Rate your current satisfaction (0–10):</label>
+        <input
+          type="range"
+          id="q2"
+          name="q2"
+          min="0"
+          max="10"
+          step="1"
+          value="5"
+        />
+        <span id="q2Value" class="slider-value">5</span>
+      </details>
+
+      <!-- Category 2 -->
+      <details>
+        <summary>Category 2: Financial</summary>
+
+        <label for="q3">1. How much do you earn annually?</label>
+        <input
+          type="range"
+          id="q3"
+          name="q3"
+          min="0"
+          max="1000000"
+          step="10000"
+          value="500000"
+        />
+        <span id="q3Value" class="slider-value">$500,000</span>
+
+        <label for="q6">2. How much do you save annually?</label>
+        <input
+          type="range"
+          id="q6"
+          name="q6"
+          min="0"
+          max="1000000"
+          step="10000"
+          value="250000"
+        />
+        <span id="q6Value" class="slider-value">$250,000</span>
+
+        <label for="q4">3. Do you have an emergency fund?</label>
+        <select id="q4" name="q4">
+          <option value="">-- Select an option --</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </details>
+
+      <!-- Category 3 -->
+      <details>
+        <summary>Category 3: Preferences</summary>
+
+        <label>1. What features would you like to see? (Select all that apply)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="feature" value="speed" /> Speed</label>
+          <label><input type="checkbox" name="feature" value="design" /> Design</label>
+          <label><input type="checkbox" name="feature" value="functionality" /> Functionality</label>
+          <label><input type="checkbox" name="feature" value="support" /> Support</label>
+        </div>
+      </details>
+
+      <!-- Category 4 -->
+      <details>
+        <summary>Category 4: Additional Questions</summary>
+
+        <label for="q7">1. Please provide any additional comments:</label>
+        <textarea id="q7" name="q7" rows="4"></textarea>
+      </details>
+
+      <!-- Category 5 -->
+      <details>
+        <summary>Category 5: Confirmation</summary>
+
+        <label><input type="checkbox" id="confirm" name="confirm" /> I confirm that the information provided is accurate.</label>
+      </details>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </main>
+
+  <script>
+    // Category 1 slider
+    const q2 = document.getElementById('q2');
+    const q2Value = document.getElementById('q2Value');
+    q2.addEventListener('input', () => {
+      q2Value.textContent = q2.value;
+    });
+
+    // Category 2 sliders with currency formatting
+    const q3 = document.getElementById('q3');
+    const q3Value = document.getElementById('q3Value');
+    q3.addEventListener('input', () => {
+      q3Value.textContent = '$' + Number(q3.value).toLocaleString();
+    });
+
+    const q6 = document.getElementById('q6');
+    const q6Value = document.getElementById('q6Value');
+    q6.addEventListener('input', () => {
+      q6Value.textContent = '$' + Number(q6.value).toLocaleString();
+    });
+
+    // Form submission handler placeholder
+    document.getElementById('assessmentForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Form submitted! (Email and PDF functionality to be implemented)');
+    });
+  </script>
+</body>
+</html>
