@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #235A44;
+      --cream: #F3E0C2;
+      --overlay: rgba(35, 90, 68, 0.35);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Rajdhani', sans-serif; background:#fff; }
+
+    .hero {
+      position: relative;
+      background: url('https://royalblue-antelope-417878.hostingersite.com/wp-content/uploads/2025/06/wiggle-hero.png') center/cover no-repeat;
+      height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .overlay {
+      position: absolute; inset:0;
+      background: var(--overlay);
+    }
+    .content {
+      position: relative;
+      width: 70%;
+      text-align: center;
+      padding-top:100px;
+      padding-bottom:100px;
+    }
+    h1 {
+      color:#fff;
+      font-size:148px;
+      letter-spacing:5%;
+      -webkit-text-stroke:0.3px var(--primary);
+      text-shadow:14px 0 5px rgba(35,90,68,0.7);
+      margin-bottom:25px;
+    }
+    p {
+      color:#fff;
+      font-size:19px;
+      font-weight:500;
+      line-height:1.63;
+      margin-bottom:35px;
+    }
+    .buttons {
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .buttons a {
+      padding:15px 20px;
+      border-radius:4px;
+      font-size:19px;
+      font-weight:bold;
+      text-decoration:none;
+      transition:background .3s, color .3s;
+    }
+    .btn-primary {
+      background: var(--cream);
+      color: var(--primary);
+      border:1px solid var(--cream);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border:1px solid #fff;
+    }
+
+    /* Shape Divider with drip effect */
+    .shape-divider {
+      position: absolute;
+      bottom:0;
+      width:100%;
+      overflow:hidden;
+      line-height:0;
+    }
+    .shape-divider svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1px);
+      height: 270px;
+    }
+    .shape-fill { fill: #fff; }
+
+    /* Responsive adjustments */
+    @media (max-width:1200px) { .content { width:90%; } }
+    @media (max-width:992px) { h1{font-size:148px;} }
+    @media (max-width:768px) { h1{font-size:115px;} }
+    @media (max-width:576px) {
+      h1{font-size:58px;}
+      .content { padding-top:70px; padding-bottom:70px; }
+      .shape-divider svg { height:150px; }
+    }
+    @media (max-width:768px) {
+      .shape-divider svg { height:185px; }
+    }
+    @media (min-width:577px) and (max-width:992px) {
+      .shape-divider svg { height:185px; }
+    }
+    @media (min-width:993px) and (max-width:1200px) {
+      .shape-divider svg { height:250px; }
+    }
+
+    .shape-divider svg path {
+  animation: dripFlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes dripFlow {
+  0% {
+    d: path("M0,0 C75,0 75,140 125,140 C175,140 175,0 225,0 C275,0 275,180 325,180 C375,180 375,0 425,0 C475,0 475,150 525,150 C575,150 575,0 625,0 C675,0 675,190 725,190 C775,190 775,0 825,0 C875,0 875,160 925,160 C975,160 975,0 1025,0 C1075,0 1075,140 1125,140 C1162,140 1200,0 1200,0 L1200,270 L0,270 Z");
+  }
+  100% {
+    d: path("M0,0 C75,0 75,150 125,150 C175,150 175,0 225,0 C275,0 275,200 325,200 C375,200 375,0 425,0 C475,0 475,160 525,160 C575,160 575,0 625,0 C675,0 675,200 725,200 C775,200 775,0 825,0 C875,0 875,170 925,170 C975,170 975,0 1025,0 C1075,0 1075,150 1125,150 C1162,150 1200,0 1200,0 L1200,270 L0,270 Z");
+  }
+}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>USTA PUNA RADOSTI!</h1>
+      <p>Dobrodošli u svet ukusa i zadovoljstva. Pogledajte našu ponudu!</p>
+      <div class="buttons">
+        <a href="#" class="btn-primary">PROIZVODI</a>
+        <a href="#" class="btn-secondary">KONTAKT</a>
+      </div>
+    </div>
+    <div class="shape-divider">
+  <svg viewBox="0 0 1200 270" preserveAspectRatio="none">
+    <path class="shape-fill" d="
+      M0,0 
+      C75,0 75,140 125,140 
+      C175,140 175,0 225,0 
+      C275,0 275,180 325,180 
+      C375,180 375,0 425,0 
+      C475,0 475,150 525,150 
+      C575,150 575,0 625,0 
+      C675,0 675,190 725,190 
+      C775,190 775,0 825,0 
+      C875,0 875,160 925,160 
+      C975,160 975,0 1025,0 
+      C1075,0 1075,140 1125,140 
+      C1162,140 1200,0 1200,0 
+      L1200,270 L0,270 Z">
+      <animate 
+        attributeName="d" 
+        dur="5s" 
+        repeatCount="indefinite" 
+        values="
+          M0,0 C75,0 75,140 125,140 C175,140 175,0 225,0 C275,0 275,180 325,180 C375,180 375,0 425,0 C475,0 475,150 525,150 C575,150 575,0 625,0 C675,0 675,190 725,190 C775,190 775,0 825,0 C875,0 875,160 925,160 C975,160 975,0 1025,0 C1075,0 1075,140 1125,140 C1162,140 1200,0 1200,0 L1200,270 L0,270 Z;
+          M0,0 C75,0 75,160 125,160 C175,160 175,0 225,0 C275,0 275,200 325,200 C375,200 375,0 425,0 C475,0 475,170 525,170 C575,170 575,0 625,0 C675,0 675,210 725,210 C775,210 775,0 825,0 C875,0 875,180 925,180 C975,180 975,0 1025,0 C1075,0 1075,160 1125,160 C1162,160 1200,0 1200,0 L1200,270 L0,270 Z;
+          M0,0 C75,0 75,140 125,140 C175,140 175,0 225,0 C275,0 275,180 325,180 C375,180 375,0 425,0 C475,0 475,150 525,150 C575,150 575,0 625,0 C675,0 675,190 725,190 C775,190 775,0 825,0 C875,0 875,160 925,160 C975,160 975,0 1025,0 C1075,0 1075,140 1125,140 C1162,140 1200,0 1200,0 L1200,270 L0,270 Z
+        "
+      />
+    </path>
+  </svg>
+</div>
+  </section>
+</body>
+</html>
