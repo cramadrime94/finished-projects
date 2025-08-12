@@ -1,1 +1,2 @@
 # finished-projects
+This repository showcases example projects created to demonstrate my capabilities for the Dutch/Flemish Sales Specialist role at WorkNomads. While these are simulated scenarios, they accurately represent the strategies, workflows, and customer engagement techniques I would use in real client interactions — from closing sales and upselling solutions to managing digital onboarding and maintaining accurate records. The focus is on practical execution, adaptability, and delivering measurable results.
